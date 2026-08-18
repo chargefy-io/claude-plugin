@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "chargefy": {
+      "type": "http",
+      "url": "https://mcp.chargefy.io"
+    }
+  }
+}

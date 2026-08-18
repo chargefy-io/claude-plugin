@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "chargefy",
+  "description": "Plugin oficial da Chargefy para o Claude Code: integração de pagamentos, webhooks, sandbox e o MCP da Chargefy.",
+  "owner": {
+    "name": "Chargefy",
+    "email": "suporte@chargefy.io",
+    "url": "https://chargefy.io"
+  },
+  "plugins": [
+    {
+      "name": "chargefy",
+      "source": "./plugins/chargefy",
+      "displayName": "Chargefy",
+      "description": "Integre a Chargefy com a ajuda do Claude: cartões de teste do sandbox, webhooks, checkout e convenções da API, além do MCP oficial.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Chargefy",
+        "email": "suporte@chargefy.io",
+        "url": "https://chargefy.io"
+      },
+      "homepage": "https://docs.chargefy.io/mcp/installation",
+      "license": "MIT",
+      "keywords": [
+        "chargefy",
+        "pagamentos",
+        "payments",
+        "billing",
+        "assinaturas",
+        "subscriptions",
+        "checkout",
+        "webhooks",
+        "pix"
+      ],
+      "category": "developer-tools"
+    }
+  ]
+}
