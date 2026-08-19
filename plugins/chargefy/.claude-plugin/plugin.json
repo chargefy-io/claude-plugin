@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "chargefy",
   "displayName": "Chargefy",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Integre a Chargefy com a ajuda do Claude: cartões de teste do sandbox, webhooks, checkout e convenções da API, além do MCP oficial.",
   "author": {
     "name": "Chargefy",

@@ -32,6 +32,17 @@ reconhece que é o mesmo servidor e não duplica as tools.
 | `convencoes-da-api` | Autenticação, erros, retry, idempotência, paginação, centavos e datas          |
 | `testar-pagamentos` | Simular aprovação, recusa, captura pendente ou processamento no sandbox        |
 
+## Revisor de integração
+
+O subagente `integration-reviewer` revisa código que integra a Chargefy
+procurando o que quebra em produção: webhook sem verificação de assinatura,
+cobrança sem idempotência, chave secreta chegando ao navegador, redirect
+tratado como confirmação de pagamento, retry em erro não confirmado.
+
+Peça uma revisão antes de subir — "revise essa integração com a Chargefy" — ou
+invoque direto com `@chargefy:integration-reviewer`. Ele não escreve nem edita
+arquivo: só lê e reporta.
+
 ## Proteção incluída
 
 Um hook avisa quando uma chave secreta de produção (`ch_live_...`) aparece num
