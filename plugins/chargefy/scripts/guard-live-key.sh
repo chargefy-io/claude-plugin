@@ -42,7 +42,7 @@ matches=$(grep -nE 'ch_live_[A-Za-z0-9]{6,}' "$file_path" 2>/dev/null | head -n 
   echo
   echo "Remova a chave do arquivo e leia-a de uma variável de ambiente"
   echo "(ex.: CHARGEFY_API_KEY). Chave que entra em commit deve ser revogada"
-  echo "no dashboard, em Desenvolvedores → Chaves de API."
+  echo "no dashboard, em Developers → Chaves de API."
 } >&2
 
 exit 2

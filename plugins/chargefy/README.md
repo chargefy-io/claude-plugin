@@ -1,7 +1,8 @@
 # Plugin Chargefy para Claude Code
 
-Ensina o Claude a integrar a Chargefy: cartões determinísticos do sandbox,
-webhooks, escolha do fluxo de checkout e convenções da API. Instala junto o
+Ensina o Claude a integrar pagamentos, billing e plataformas com a Chargefy.
+Inclui o mapa completo da integração pública e trilhas de sandbox, webhooks,
+checkout e convenções da API. Instala junto o
 MCP oficial (`https://mcp.chargefy.io`), então o mesmo agente que escreve o
 código também consulta seus dados de teste.
 
@@ -24,13 +25,29 @@ reconhece que é o mesmo servidor e não duplica as tools.
 
 ## O que vem dentro
 
-| Skill               | Quando entra                                                                   |
-| ------------------- | ------------------------------------------------------------------------------ |
-| `setup`             | Preparar chave de teste, variáveis de ambiente e validar a conexão             |
-| `escolher-checkout` | Decidir e implementar link, checkout hospedado, white-label ou Payment Intents |
-| `webhooks`          | Criar ou revisar endpoint: assinatura, deduplicação, retentativas              |
-| `convencoes-da-api` | Autenticação, erros, retry, idempotência, paginação, centavos e datas          |
-| `testar-pagamentos` | Simular aprovação, recusa, captura pendente ou processamento no sandbox        |
+| Skill                | Quando entra                                        |
+| -------------------- | --------------------------------------------------- |
+| `chargefy`           | Configuração, conceitos, modelagem e boas práticas. |
+| `chargefy-payments`  | Checkout, webhooks e testes no sandbox.             |
+| `chargefy-billing`   | Faturas, trial, pró-rata, uso e recuperação.        |
+| `chargefy-platforms` | Organizações conectadas, ativação e marca.          |
+
+As fontes públicas ficam em `apps/docs/skill.md` e
+`apps/docs/.mintlify/skills/*/SKILL.md`. O plugin usa symlinks para essas fontes;
+o publicador materializa todos os arquivos para distribuição independente.
+`pnpm claude-plugin:check` verifica essa paridade e a tabela gerada de sandbox.
+
+## Codex, Cursor e outros agentes
+
+O mesmo pacote de quatro skills é distribuído pela documentação, sem depender do plugin:
+
+```bash
+npx skills add https://docs.chargefy.io --skill chargefy
+```
+
+O comando instala a configuração, conceitos e boas práticas. Troque `chargefy` pelo nome de outra skill da
+tabela para instalá-la. Selecione seu agente ou use `--agent codex`, `--agent cursor` ou
+`--agent claude-code`. Veja [Codar com agentes de IA](https://docs.chargefy.io/get-started/ai-agents).
 
 ## Revisor de integração
 
