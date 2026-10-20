@@ -62,6 +62,12 @@ and does not start or exhaust a retry schedule. The current email setting and
 link destination apply even to invoices already in recovery; retry dates and
 the final action remain those captured when recovery began.
 
+For payment and attempt references during recovery, follow
+[payments and charges](https://docs.chargefy.io/payments/payments-vs-charges)
+and `chargefy-payments`. Display the returned `number`, but keep each resource's
+`id` for API calls and relationships; do not substitute the payment's number
+for the invoice's own number or infer how many invoices exist from attempts.
+
 ## Change the plan or quantity
 
 Use the [preview and proration guide](https://docs.chargefy.io/payments/update-subscriptions-with-proration)

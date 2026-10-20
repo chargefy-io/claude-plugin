@@ -104,6 +104,21 @@ method, while managing states, retries, and buyer-facing translations yourself.
 Direct creation supports cards and Pix; boleto originates in hosted checkout or
 an invoice.
 
+### Identify payments and attempts
+
+`payment_intent.number` is an immutable six-character reference, unique within
+the organization and environment. `charge.number` appends the attempt sequence,
+with at least three digits; after `999`, it continues as `1000` without truncation.
+These references are assigned by Chargefy: display them, but use the returned
+`id` in API paths, cursors, and relationships. Do not send or derive IDs from `number`.
+
+Example: a buyer pays BRL 100 under `J9N6R8`. Attempt `J9N6R8-001` fails;
+`J9N6R8-002` succeeds. There is one Payment Intent and two Charges, not two
+payments. Query each object using its own `pi_…` or `ch_…` ID. See
+[payments and charges](https://docs.chargefy.io/payments/payments-vs-charges).
+New payment and charge events include `number` in `data.object`; historical
+event snapshots may lack it. Fetch the current resource by ID when needed.
+
 ### Implement with MCP and Chargefy for Platforms
 
 MCP helps discover contracts, query resources, and create catalogs and links in
