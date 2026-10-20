@@ -13,7 +13,7 @@
       "source": "./plugins/chargefy",
       "displayName": "Chargefy",
       "description": "Integre pagamentos, billing e plataformas com a Chargefy: quatro skills de integração, revisor de integração e MCP oficial.",
-      "version": "0.4.1",
+      "version": "0.4.2",
       "author": {
         "name": "Chargefy",
         "email": "suporte@chargefy.io",
