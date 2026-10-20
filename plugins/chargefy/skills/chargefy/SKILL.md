@@ -235,7 +235,8 @@ rather than inferring them.
 
 Payment Intents and Charges also return an immutable human-readable `number`:
 a payment may be `J9N6R8`, with attempts `J9N6R8-001` and `J9N6R8-002`.
-Use it in screens and support conversations; keep `id` for API paths, cursors,
+Chargefy assigns these numbers automatically; do not send them as input.
+Use them in screens and support conversations; keep `id` for API paths, cursors,
 and resource relationships. See [payment references](https://docs.chargefy.io/payments/payments-vs-charges)
 for the numbering rules and retry example.
 

@@ -67,6 +67,9 @@ For payment and attempt references during recovery, follow
 and `chargefy-payments`. Display the returned `number`, but keep each resource's
 `id` for API calls and relationships; do not substitute the payment's number
 for the invoice's own number or infer how many invoices exist from attempts.
+For example, a BRL 100 invoice can have payment `J9N6R8` with failed attempt
+`J9N6R8-001` and successful attempt `J9N6R8-002`: the retry does not itself
+create a second invoice.
 
 ## Change the plan or quantity
 

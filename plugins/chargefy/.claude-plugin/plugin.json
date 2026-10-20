@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "chargefy",
   "displayName": "Chargefy",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "Integre pagamentos, billing e plataformas com a Chargefy: quatro skills de integração, revisor de integração e MCP oficial.",
   "author": {
     "name": "Chargefy",
